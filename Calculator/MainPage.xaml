@@ -1,55 +1,124 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Calculator.MainPage">
-
+             x:Class="Calculator.MainPage"
+             BackgroundColor="#212121">
     <ScrollView>
         <Grid
-            RowDefinitions="Auto, *, *, *, *, *, * "
+            RowDefinitions="Auto, Auto, *, *, *, *, *"
             ColumnDefinitions="*, *, *, *"
-            Padding="10"
-            ColumnSpacing="3"
-            RowSpacing="2"
-            >
+            Padding="12"
+            ColumnSpacing="6"
+            RowSpacing="6">
 
-            <Entry 
-                x:Name="EntryCalculations"
+            <!-- Display-rutor -->
+            <Entry
+                x:Name="EntryOver"
                 Grid.Row="0"
                 Grid.ColumnSpan="4"
-                IsReadOnly="True"/>
+                IsReadOnly="True"
+                BackgroundColor="#FFFFFF"
+                TextColor="#212121"
+                FontSize="18"
+                HorizontalTextAlignment="End"/>
 
             <Entry
-                x:Name="EntryResult"
+                x:Name="EntryUnder"
                 Grid.Row="1"
                 Grid.ColumnSpan="4"
-                IsReadOnly="True"/>
+                IsReadOnly="True"
+                BackgroundColor="#FFFFFF"
+                TextColor="#212121"
+                FontSize="32"
+                HorizontalTextAlignment="End"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Text="%" />
-            <Button Grid.Row="2" Grid.Column="1" Text="CE" Clicked="CEButton"/>
-            <Button Grid.Row="2" Grid.Column="2" Text="C" Clicked="CButton"/>
-            <Button Grid.Row="2" Grid.Column="3" Text="Del" Clicked="DeleteButton"/>
+            <!-- Rad 2 – funktionsknappar -->
+            <Button Grid.Row="2" Grid.Column="0" Text="%"
+                    BackgroundColor="#BDBDBD" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="CE"
+                    BackgroundColor="#BDBDBD" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="CEButton"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="C"
+                    BackgroundColor="#BDBDBD" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="ClearButton"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="Del"
+                    BackgroundColor="#BDBDBD" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="ClearButton"/>
 
-            <Button Grid.Row="3" Grid.Column="0" Text="7" Clicked="NumberButtons"/>
-            <Button Grid.Row="3" Grid.Column="1" Text="8" Clicked="NumberButtons"/>
-            <Button Grid.Row="3" Grid.Column="2" Text="9" Clicked="NumberButtons"/>
-            <Button Grid.Row="3" Grid.Column="3" Text="x" Clicked="OperatorButtons"/>
+            <!-- Rad 3 -->
+            <Button Grid.Row="3" Grid.Column="0" Text="7"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="8"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="9"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="x"
+                    BackgroundColor="#4CAF50" TextColor="#1E1E2E"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="OperatorButton"/>
 
-            <Button Grid.Row="4" Grid.Column="0" Text="4" Clicked="NumberButtons"/>
-            <Button Grid.Row="4" Grid.Column="1" Text="5" Clicked="NumberButtons"/>
-            <Button Grid.Row="4" Grid.Column="2" Text="6" Clicked="NumberButtons"/>
-            <Button Grid.Row="4" Grid.Column="3" Text="-" Clicked="OperatorButtons"/>
+            <!-- Rad 4 -->
+            <Button Grid.Row="4" Grid.Column="0" Text="4"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="5"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="6"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="4" Grid.Column="3" Text="-"
+                    BackgroundColor="#4CAF50" TextColor="#F0F4F0"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="OperatorButton"/>
 
-            <Button Grid.Row="5" Grid.Column="0" Text="1" Clicked="NumberButtons"/>
-            <Button Grid.Row="5" Grid.Column="1" Text="2" Clicked="NumberButtons"/>
-            <Button Grid.Row="5" Grid.Column="2" Text="3" Clicked="NumberButtons"/>
-            <Button Grid.Row="5" Grid.Column="3" Text="+" Clicked="OperatorButtons"/>
+            <!-- Rad 5 -->
+            <Button Grid.Row="5" Grid.Column="0" Text="1"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="2"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="5" Grid.Column="2" Text="3"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="5" Grid.Column="3" Text="+"
+                    BackgroundColor="#4CAF50" TextColor="#F0F4F0"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="OperatorButton"/>
 
-            <Button Grid.Row="6" Grid.Column="0" Text="+/-" />
-            <Button Grid.Row="6" Grid.Column="1" Text="0" Clicked="NumberButtons"/>
-            <Button Grid.Row="6" Grid.Column="2" Text="." Clicked="DecimalButton"/>
-            <Button Grid.Row="6" Grid.Column="3" Text="=" Clicked="EqualsButton"/>
+            <!-- Rad 6 -->
+            <Button Grid.Row="6" Grid.Column="0" Text="+/-"
+                    BackgroundColor="#BDBDBD" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"/>
+            <Button Grid.Row="6" Grid.Column="1" Text="0"
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="6" Grid.Column="2" Text="."
+                    BackgroundColor="#FFFFFF" TextColor="#212121"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="NumberButton"/>
+            <Button Grid.Row="6" Grid.Column="3" Text="="
+                    BackgroundColor="#2E7D32" TextColor="#F0F4F0"
+                    FontSize="Large" CornerRadius="10"
+                    Clicked="EqualButton"/>
         </Grid>
     </ScrollView>
-
 </ContentPage>
-    
